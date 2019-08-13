@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-from times import Times
 import argparse
+
+from times import Times
 
 ts = Times()
 
