@@ -6,28 +6,46 @@
 
 ## Usage
 
-## File Tree
+### memorize
 
-```plantuml
-salt
-{
-  {T
-    + World
-    ++ main
-    ++ hoge.py
- }
-}
-```
+`times {your great thinking}`
+
+### recall past times
+
+`times recall -n 10`
 
 ## Class
 
 ```plantuml
+class Times {
+    void save()
+    void recall()
+    string db_path
+}
+```
 
- class A
- class B
- class C
+## Save
 
- A --|> B
- A *- C
+```plantuml
+actor User
+participant Times
+participant DB
 
+User -> Times : Save() or Recall()
+Times -> DB : Save() or Recall()
+DB --> Times
+Times --> User
+```
+
+## Schema
+
+```plantuml
+package DB as ext <<Database>> {
+    entity "Times" {
+        + ID [Primary Key]
+        --
+        Time
+        Message
+    }
+}
 ```
