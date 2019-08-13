@@ -4,6 +4,8 @@ import argparse
 
 def main():
     ts = Times()
+    ts.post("hello")
+    ts.recall()
 
 
 if __name__ == "__main__":
@@ -21,3 +23,4 @@ if __name__ == "__main__":
         pass
     else:
         raise AssertionError
+    main()
