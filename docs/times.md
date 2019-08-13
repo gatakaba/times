@@ -28,7 +28,7 @@ Times --> User
 ```plantuml
 package DB as ext <<Database>> {
     entity "times" {
-        + ID [Primary Key]
+        +id [Primary Key]
         --
         time
         message
