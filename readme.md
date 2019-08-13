@@ -3,6 +3,7 @@
 ## Installation
 
 `git clone https://github.com/gatakaba/times.git`
+`cd times && ./install.sh`
 
 ## Usage
 
