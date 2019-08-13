@@ -10,7 +10,7 @@
 
 ### memorize
 
-`times {your great thinking}`
+`times post {your great thinking}`
 
 ### recall past times
 
