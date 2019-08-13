@@ -28,8 +28,8 @@ package DB as ext <<Database>> {
     entity "Times" {
         + ID [Primary Key]
         --
-        Time
-        Message
+        time
+        message
     }
 }
 ```
