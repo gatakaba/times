@@ -12,4 +12,4 @@
 
 ### recall past times
 
-`times recall -n 10`
+`times show -n 10`
