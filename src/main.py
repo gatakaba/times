@@ -20,12 +20,11 @@ if __name__ == "__main__":
     parser_post.add_argument("message", type=str, help="message")
     parser_post.set_defaults(handler=post)
 
-    parser_recall = subparsers.add_parser("show", help="see `commit -h`")
-    parser_recall.add_argument("-n", default=10, help="display num")
-    parser_recall.set_defaults(handler=show)
+    parser_show = subparsers.add_parser("show", help="see `commit -h`")
+    parser_show.add_argument("-n", default=10, help="display num")
+    parser_show.set_defaults(handler=show)
 
     args = parser.parse_args()
-    print(args)
     if hasattr(args, "handler"):
         args.handler(args)
     else:
