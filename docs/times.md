@@ -1,26 +1,34 @@
-# SW Specification
-
 ## Class
 
 ```plantuml
 class Times {
-    void save()
-    void recall()
-    string db_path
+    + void post()
+    + void recall()
+    + string db_path
+    - void _create_table()
+    list<Message> message_list
 }
+class Message{
+    string message
+    datetime dt
+}
+
+Times "1" o-- "*" Message
 ```
 
 ## Sequence
+
+### post
 
 ```plantuml
 actor User
 participant Times
 participant DB
-
-User -> Times : Save() or Recall()
+autoactivate on
+User -> Times : post() or recall()
 Times -> DB : query
-DB --> Times
-Times --> User
+return
+return
 ```
 
 ## Database
