@@ -1,8 +1,6 @@
 from datetime import datetime
 import sqlite3
 
-# import dataclass
-
 
 class Times:
     def __init__(self, db_path="times.sqlite"):

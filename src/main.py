@@ -1,26 +1,23 @@
 from times import Times
 import argparse
 
-
-def main():
-    ts = Times()
-    ts.post("hello")
-    ts.recall()
-
+ts = Times()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Memorize your minutes")
 
-    parser.add_argument(
-        "query_type", const="post", nargs="?", default="post", choices=["post", "show"]
-    )
-    args = parser.parse_args()
-    query_type = args.query_type
+    subparsers = parser.add_subparsers()
+    parser_post = subparsers.add_parser("post")
+    parser_post.add_argument("message", type=str, help="message")
 
-    if query_type == "post":
-        pass
-    elif query_type == "show":
-        pass
+    parser_recall = subparsers.add_parser("show")
+    parser_recall.add_argument("show", type=int, help="display num")
+
+    args = parser.parse_args()
+
+    if hasattr(args, "message"):
+        ts.post(args.message)
+    elif hasattr(args, "show"):
+        ts.recall(args.show)
     else:
-        raise AssertionError
-    main()
+        raise ValueError()
