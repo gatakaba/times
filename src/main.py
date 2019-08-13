@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from times import Times
 import argparse
 
