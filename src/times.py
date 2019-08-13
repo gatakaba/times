@@ -23,8 +23,8 @@ class Times:
         self.conn.commit()
 
     def show(self, n=10):
-        sql = """SELECT * FROM times"""
-        self.cur.execute(sql)
+        sql = """SELECT time,message FROM times ORDER BY ID DESC LIMIT ?"""
+        self.cur.execute(sql, (n,))
         for i in self.cur.fetchall():
             print(i)
 
