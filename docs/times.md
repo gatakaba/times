@@ -8,7 +8,7 @@ class Times {
 }
 ```
 
-## Save
+## Sequence
 
 ```plantuml
 actor User
@@ -16,16 +16,18 @@ participant Times
 participant DB
 
 User -> Times : Save() or Recall()
-Times -> DB : Save() or Recall()
+Times -> DB : query
 DB --> Times
 Times --> User
 ```
 
-## Schema
+## Database
+
+### Schema
 
 ```plantuml
 package DB as ext <<Database>> {
-    entity "Times" {
+    entity "times" {
         + ID [Primary Key]
         --
         time
@@ -33,3 +35,17 @@ package DB as ext <<Database>> {
     }
 }
 ```
+
+### Query
+
+#### create table
+
+`create table times(time,message)`
+
+#### add record
+
+`insert into times (time,message) values(?,?)`
+
+#### selectrecord
+
+`select time,message from times;`
